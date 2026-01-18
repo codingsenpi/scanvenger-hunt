@@ -1,0 +1,82 @@
+name: scanvenger_hunt_2
+description: "A dynamic, real-time scavenger hunt application built with Flutter
+  for events. Features a player app and a web-based admin dashboard."
+publish_to: "none"
+version: 3.0.0+2
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  animated_background: ^2.0.0
+  animated_text_kit: ^4.2.3
+  audioplayers: ^6.5.0
+  cached_network_image: ^3.4.1
+  cloud_firestore: ^6.0.0
+  cloud_functions: ^6.0.0
+  confetti: ^0.8.0
+  connectivity_plus: ^6.1.5
+  cupertino_icons: ^1.0.8
+  equatable: ^2.0.7
+  feather_icons: ^1.2.0
+  firebase_auth: ^6.0.1
+  firebase_core: ^4.0.0
+  firebase_messaging: ^16.0.0
+  firebase_storage: ^13.0.0
+  firebase_ui_auth: ^3.0.0
+  flutter:
+    sdk: flutter
+  flutter_animate: ^4.5.2
+  flutter_dotenv: ^5.1.0
+  flutter_image_compress: ^2.4.0
+  flutter_spinkit: ^5.2.2
+  font_awesome_flutter: 10.9.0
+  get: ^4.7.2
+  getwidget: ^6.0.0
+  google_fonts: ^6.3.0
+  iconsax: ^0.0.8
+  image_picker: ^1.2.0
+  json_annotation: ^4.9.0
+  liquid_swipe: ^3.1.0
+  lottie: ^3.3.1
+  particles_flutter: ^1.0.1
+  permission_handler: ^12.0.1
+  shared_preferences: ^2.5.3
+  shimmer: ^3.0.0
+  supabase_flutter: ^2.9.1
+  url_launcher: ^6.3.2
+  velocity_x: ^4.3.1
+  vibration: ^3.1.3
+
+dev_dependencies:
+  build_runner: ^2.4.9
+  change_app_package_name: ^1.5.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_lints: ^3.0.2
+  flutter_test:
+    sdk: flutter
+  # get_cli: ^1.9.1
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/lottie/
+    - assets/images/
+    - .env
+    # - assets/audio/
+
+flutter_launcher_icons:
+  # === Android Settings ===
+  android: true
+  ios: false
+  image_path: "assets/foreground.png"
+
+  # Settings for the adaptive icon (Android 8+)
+  adaptive_icon_background: "#608861"
+  adaptive_icon_foreground: "assets/foreground.png"
+
+  # Settings for the monochrome themed icon (Android 13+)
+  monochrome: true
+  image_path_monochrome: "assets/lineart.png"
+  # --------------------------

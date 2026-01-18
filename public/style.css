@@ -1,0 +1,311 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 24px;
+}
+
+#app {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #4caf50;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 28px;
+  text-align: center;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 24px 0;
+}
+
+/* --- NEW TWO-ROW HEADER --- */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header p {
+  margin: 0;
+  color: #aaa;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+/* --- THE TOGGLE SWITCH --- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #4caf50;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* --- BEAUTIFUL BUTTONS --- */
+.beautiful-btn {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e0e0e0;
+  background-color: #424242; /* Neutral grey */
+  border: 1px solid #555;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.beautiful-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#logout-btn:hover {
+  background-color: #f44336; /* Red on hover */
+  border-color: #f44336;
+}
+
+#save-times-btn {
+  background-color: #1976d2; /* Blue */
+  border-color: #1976d2;
+}
+
+#save-times-btn:hover {
+  background-color: #2196f3; /* Lighter blue on hover */
+  border-color: #2196f3;
+}
+
+/* --- DATE/TIME INPUT --- */
+input[type="datetime-local"] {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 8px;
+  color-scheme: dark;
+}
+
+/* --- GRID & CARD STYLES --- */
+#submissions-list,
+#team-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.submission-card,
+.team-card {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card h3 {
+  margin-top: 0;
+  color: #4caf50;
+}
+
+.submission-card p,
+.team-card p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.image-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.image-container h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #aaa;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.actions button,
+.advance-btn,
+#login-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.approve-btn {
+  background-color: #4caf50;
+}
+.reject-btn {
+  background-color: #f44336;
+}
+.advance-btn {
+  background-color: #2196f3;
+  margin-top: 10px;
+}
+
+#login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 24px 28px 28px 28px;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#login-container h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+#login-container input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #f0f0f0;
+  font-size: 16px;
+}
+
+#login-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#login-btn:hover {
+  background-color: #5cb85c;
+}
+
+.error-message {
+  color: #f44336;
+  text-align: center;
+  margin-top: 10px;
+  min-height: 1.2em;
+}
+
+.error-message {
+  color: #f44336;
+}
+
+/* --- COLLAPSIBLE SECTION --- */
+.collapsible-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+.collapsible-header h2 {
+  margin: 0;
+}
+.collapsible-icon {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+.collapsible-header.open .collapsible-icon {
+  transform: rotate(180deg);
+}
+.collapsible-content.hidden {
+  display: none;
+}

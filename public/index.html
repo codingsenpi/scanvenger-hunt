@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scanvenger Hunt - Admin Dashboard</title>
+
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"
+    ></script>
+
+    <script defer src="app.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>TGCC Scanvenger Hunt - Admin Dashboard</h1>
+
+      <div id="login-container">
+        <h2>Admin Login</h2>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          value="admin@tgcc.event"
+        />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="login-btn">Login</button>
+        <p id="login-error" class="error-message"></p>
+      </div>
+
+      <div id="main-content" style="display: none">
+        <div class="header">
+          <div class="header-row">
+            <p>Logged in as: <span id="user-email"></span></p>
+            <div class="header-controls">
+              <div class="control-item">
+                <label for="leaderboard-toggle">Leaderboard:</label>
+                <label class="switch">
+                  <input type="checkbox" id="leaderboard-toggle" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <button id="logout-btn" class="beautiful-btn">Logout</button>
+            </div>
+          </div>
+          <div class="header-row">
+            <div class="control-item">
+              <label for="start-time">Start Time:</label>
+              <input type="datetime-local" id="start-time" />
+            </div>
+            <div class="control-item">
+              <label for="end-time">End Time:</label>
+              <input type="datetime-local" id="end-time" />
+            </div>
+            <button id="save-times-btn" class="beautiful-btn">
+              Save Times
+            </button>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="collapsible-section">
+          <div class="collapsible-header" id="team-management-header">
+            <h2>Team Management</h2>
+            <span class="collapsible-icon">▼</span>
+          </div>
+          <div class="collapsible-content hidden" id="team-list-container">
+            <div id="team-list"></div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="collapsible-section">
+          <div class="collapsible-header" id="create-team-header">
+            <h2>Create New Team</h2>
+            <span class="collapsible-icon">▼</span>
+          </div>
+          <div class="collapsible-content hidden" id="create-team-container">
+            <form id="create-team-form">
+              <input
+                type="text"
+                id="new-team-name"
+                placeholder="Team Name"
+                required
+              />
+              <input
+                type="email"
+                id="new-team-email"
+                placeholder="Team Login Email (e.g., team1@tgcc.event)"
+                required
+              />
+              <input
+                type="password"
+                id="new-team-password"
+                placeholder="Password"
+                required
+              />
+              <input
+                type="text"
+                id="new-team-order"
+                placeholder="Mystery Order (e.g., 1,5,2,4...)"
+                required
+              />
+              <select id="assign-admin-select" required>
+                <option value="" disabled selected>
+                  Assign to an Admin...
+                </option>
+              </select>
+              <button type="submit" class="create-btn">Create Team</button>
+            </form>
+          </div>
+        </div>
+
+        <hr />
+
+        <h2>Pending Submissions</h2>
+        <div id="submissions-list"></div>
+      </div>
+    </div>
+  </body>
+</html>
